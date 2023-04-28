@@ -1,0 +1,23 @@
+<div id="container">
+  <!-- populated by JS-->
+</div>
+
+<script src="./boston.js"></script>
+
+<script>
+
+function renderPosts(data, container) {
+  var person = boston.data;
+    var len = boston.data.length;
+  let topSalaryPeople = [];
+  let html = '';
+
+  for (let i = 0; i < person.length; i++) {
+    html += '<li class="post"><h2>' + person[i][8] + ', ' + person[i][11] + '</h3></li>';
+  }
+
+  container.innerHTML = '<ul id="data">' + html + '</ul>';
+}
+
+renderPosts(boston, document.getElementById('container'));
+</script>

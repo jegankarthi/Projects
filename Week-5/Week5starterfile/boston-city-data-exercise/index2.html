@@ -1,0 +1,17 @@
+<div id="container">
+    <!-- populated by JS-->
+  </div>
+<script src="./json.js"></script>
+<script>
+    function renderPosts(json, container) {
+      var people = json;
+      var len = json.length;
+      var html = " ";
+          
+     //for (let i = 0; i < len; i++) {
+        html += '<li class="post">' + "<h2>" + people[8] + "</h2>" + "<h3>" + people[11] + "</h3>";
+      //}
+      container.innerHTML = '<ul id = "data">' + html + "</ul>";
+    }
+    renderPosts(json, document.getElementById('container'));
+  </script>

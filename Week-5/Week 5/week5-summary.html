@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Functions: Array Manipulation and Scope</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+        <h1 class="header-text">Functions: Array Manipulation and Scope</h1>
+    </div>
+<p>Please review the concepts covered this week.</p>
+
+<h2 id="array-built-in-methods">Array built-in methods</h2>
+<h3 id="array-pop-">array.pop()</h3>
+<p>The pop() method removes the last element from an array and returns that element. This method changes the length of
+    the array.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> plants = [<span class="hljs-string">'broccoli'</span>, <span class="hljs-string">'cauliflower'</span>, <span class="hljs-string">'cabbage'</span>, <span class="hljs-string">'kale'</span>, <span class="hljs-string">'tomato'</span>]<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(plants.pop())<span class="hljs-comment">;</span>
+// Expected output: <span class="hljs-string">"tomato"</span>
+
+console.<span class="hljs-built_in">log</span>(plants)<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"broccoli"</span>, <span class="hljs-string">"cauliflower"</span>, <span class="hljs-string">"cabbage"</span>, <span class="hljs-string">"kale"</span>]
+
+plants.pop()<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(plants)<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"broccoli"</span>, <span class="hljs-string">"cauliflower"</span>, <span class="hljs-string">"cabbage"</span>]
+</code></pre>
+<h3 id="array-push-">array.push()</h3>
+<p>The push() method adds one or more elements to the end of an array and returns the new length of the array.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> animals = [<span class="hljs-string">'pigs'</span>, <span class="hljs-string">'goats'</span>, <span class="hljs-string">'sheep'</span>]<span class="hljs-comment">;</span>
+
+<span class="hljs-keyword">const</span> count = animals.push(<span class="hljs-string">'cows'</span>)<span class="hljs-comment">;</span>
+console.<span class="hljs-built_in">log</span>(count)<span class="hljs-comment">;</span>
+// Expected output: <span class="hljs-number">4</span>
+console.<span class="hljs-built_in">log</span>(animals)<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"pigs"</span>, <span class="hljs-string">"goats"</span>, <span class="hljs-string">"sheep"</span>, <span class="hljs-string">"cows"</span>]
+
+animals.push(<span class="hljs-string">'chickens'</span>, <span class="hljs-string">'cats'</span>, <span class="hljs-string">'dogs'</span>)<span class="hljs-comment">;</span>
+console.<span class="hljs-built_in">log</span>(animals)<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"pigs"</span>, <span class="hljs-string">"goats"</span>, <span class="hljs-string">"sheep"</span>, <span class="hljs-string">"cows"</span>, <span class="hljs-string">"chickens"</span>, <span class="hljs-string">"cats"</span>, <span class="hljs-string">"dogs"</span>]
+</code></pre>
+<h3 id="array-slice-">array.slice()</h3>
+<p>The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end
+    (end not included) where start and end represent the index of items in that array. The original array does not get
+    modified.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> animals = [<span class="hljs-string">'ant'</span>, <span class="hljs-string">'bison'</span>, <span class="hljs-string">'camel'</span>, <span class="hljs-string">'duck'</span>, <span class="hljs-string">'elephant'</span>]<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(animals.slice(<span class="hljs-number">2</span>))<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"camel"</span>, <span class="hljs-string">"duck"</span>, <span class="hljs-string">"elephant"</span>]
+
+console.<span class="hljs-built_in">log</span>(animals.slice(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>))<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"camel"</span>, <span class="hljs-string">"duck"</span>]
+
+console.<span class="hljs-built_in">log</span>(animals.slice(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>))<span class="hljs-comment">;</span>
+// Expected output: Array [<span class="hljs-string">"bison"</span>, <span class="hljs-string">"camel"</span>, <span class="hljs-string">"duck"</span>, <span class="hljs-string">"elephant"</span>]
+</code></pre>
+<h3 id="array-splice-">array.splice();</h3>
+<p>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new
+    elements in their place.</p>
+<pre><code class="lang-js">const months = [<span class="hljs-symbol">'Jan</span>', <span class="hljs-symbol">'March</span>', <span class="hljs-symbol">'April</span>', <span class="hljs-symbol">'June</span>'];
+months.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-symbol">'Feb</span>');
+// inserts <span class="hljs-keyword">at</span> index <span class="hljs-number">1</span>
+console.log(months);
+// Expected output: <span class="hljs-keyword">Array</span> [<span class="hljs-string">"Jan"</span>, <span class="hljs-string">"Feb"</span>, <span class="hljs-string">"March"</span>, <span class="hljs-string">"April"</span>, <span class="hljs-string">"June"</span>]
+
+months.splice(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-symbol">'May</span>');
+// replaces <span class="hljs-number">1</span> element <span class="hljs-keyword">at</span> index <span class="hljs-number">4</span>
+console.log(months);
+// Expected output: <span class="hljs-keyword">Array</span> [<span class="hljs-string">"Jan"</span>, <span class="hljs-string">"Feb"</span>, <span class="hljs-string">"March"</span>, <span class="hljs-string">"April"</span>, <span class="hljs-string">"May"</span>]
+</code></pre>
+<h3 id="string-indexof-">string.indexOf()</h3>
+<p>The indexOf() method returns the index within the string of the first occurrence of the specified
+    value, starting the search at fromIndex. It returns -1 if the value is not found.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> paragraph = <span class="hljs-string">'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?'</span>;
+
+<span class="hljs-keyword">const</span> searchTerm = <span class="hljs-string">'dog'</span>;
+<span class="hljs-keyword">const</span> indexOfFirst = paragraph.indexOf(searchTerm);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The index of the first "<span class="hljs-subst">${searchTerm}</span>" from the beginning is <span class="hljs-subst">${indexOfFirst}</span>`</span>);
+<span class="hljs-comment">// expected output: "The index of the first "dog" from the beginning is 40"</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The index of the 2nd "<span class="hljs-subst">${searchTerm}</span>" is <span class="hljs-subst">${paragraph.indexOf(searchTerm, (indexOfFirst + <span class="hljs-number">1</span>))}</span>`</span>);
+<span class="hljs-comment">// expected output: "The index of the 2nd "dog" is 52"</span>
+</code></pre>
+<h3 id="string-split-">string.split()</h3>
+<p>The split() method divides a string into an ordered list of substrings, puts these substrings into an array, and
+    returns the array. The division is done by searching for a pattern; where the pattern is provided as the first
+    parameter in the method&#39;s call. </p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> <span class="hljs-built_in">str</span> = <span class="hljs-string">'The quick brown fox jumps over the lazy dog.'</span>;
+
+<span class="hljs-keyword">const</span> words = <span class="hljs-built_in">str</span>.<span class="hljs-built_in">split</span>(<span class="hljs-string">' '</span>);
+console.<span class="hljs-built_in">log</span>(words[<span class="hljs-number">3</span>]);
+<span class="hljs-comment">// expected output: "fox"</span>
+
+<span class="hljs-keyword">const</span> chars = <span class="hljs-built_in">str</span>.<span class="hljs-built_in">split</span>(<span class="hljs-string">''</span>);
+console.<span class="hljs-built_in">log</span>(chars[<span class="hljs-number">8</span>]);
+<span class="hljs-comment">// expected output: "k"</span>
+
+<span class="hljs-keyword">const</span> strCopy = <span class="hljs-built_in">str</span>.<span class="hljs-built_in">split</span>();
+console.<span class="hljs-built_in">log</span>(strCopy);
+<span class="hljs-comment">// expected output: Array ["The quick brown fox jumps over the lazy dog."]</span>
+</code></pre>
+<h3 id="string-slice-">string.slice()</h3>
+<p>The slice() method extracts a section of a string and returns it as a new string without modifying the original
+    string.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> <span class="hljs-built_in">str</span> = <span class="hljs-string">'The quick brown fox jumps over the lazy dog.'</span>;
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.slice(<span class="hljs-number">31</span>));
+<span class="hljs-comment">// Expected output: "the lazy dog."</span>
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.slice(<span class="hljs-number">4</span>, <span class="hljs-number">19</span>));
+<span class="hljs-comment">// Expected output: "quick brown fox"</span>
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.slice(<span class="hljs-number">-4</span>));
+<span class="hljs-comment">// Expected output: "dog."</span>
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-built_in">str</span>.slice(<span class="hljs-number">-9</span>, <span class="hljs-number">-5</span>));
+<span class="hljs-comment">// Expected output: "lazy"</span>
+</code></pre>
+<h3 id="string-template-literals">String template literals</h3>
+<p>Template literals are strings that allow for directly embedded expressions.  They begin and end with backticks (`your string here`) and you can embed any data type within the string using ${put your data here}. 
+    This is very useful for "interpolating" (embedding) large quantities of data inside strings. 
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> firstName = <span class="hljs-string">'Rachel'</span>;
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-string">`Hello, <span class="hljs-subst">${firstName}</span>!`;</span>
+<span class="hljs-built_in">console</span>.log(greeting);
+
+<span class="hljs-comment">//Expected output: Hello, Rachel!</span>
+</code></pre>
+
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> studentObj = {
+  name: <span class="hljs-string">'Rachel'</span>,
+  <span class="hljs-keyword">class</span>: <span class="hljs-string">'Intro to Programming'</span>
+};
+
+<span class="hljs-keyword">const</span> studentInfo = <span class="hljs-string">`The student's name is <span class="hljs-subst">${studentObj.name}</span>, and they are taking <span class="hljs-subst">${studentObj.class}</span>.`</span>;
+<span class="hljs-built_in">console</span>.log(studentInfo);
+
+<span class="hljs-comment">//Expected output: The student's name is Rachel, and they are taking Intro to Programming.</span>
+</code></pre>
+
+
+<h2 id="function-styles">Function styles</h2>
+<h3 id="anonymous">Anonymous</h3>
+<p>An anonymous function is a function without a function name. Only function expressions can be anonymous. Function
+    declarations must have a name.  Anonymous functions are useful when you use the function only once, as they are faster to write. </p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// When used as a function expression </span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{//do stuff}; 
+<span class="hljs-comment">// Or using ES6 arrow notation</span>
+() =&gt; {//do stuff};
+</code></pre>
+<h3 id="named">Named</h3>
+<p>A named function is a function with a function name. We name our functions when we need to re-use them later on in our code.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Function declaration </span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{}; 
+<span class="hljs-comment">// Named function expression </span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>{});
+<span class="hljs-comment">// or using the ECMAScript 2015 arrow notation</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {};
+</code></pre>
+<h3 id="fat-arrow">Fat Arrow</h3>
+<p>An arrow function expression is a compact alternative to the traditional function expression but is limited and
+    can&#39;t be used in all situations.  They are inherently anonymous but can be stored in variables and re-used.</p>
+
+    <pre><code class="lang-js"><span class="hljs-comment">//With one parameter</span>
+param1 =&gt; {<span class="hljs-keyword">do</span> stuff}
+
+<span class="hljs-comment">//With multiple parameters</span>
+(param1, param2) =&gt; {<span class="hljs-keyword">do</span> stuff};
+
+<span class="hljs-comment">//With multiple parameters stored in a variable</span>
+<span class="hljs-keyword">var</span> myFunction = (param1, param2) =&gt; {<span class="hljs-keyword">do</span> stuff};
+</code></pre>
+
+
+
+<pre><code class="lang-js">
+<span class="hljs-comment">//Now a more complex example with an object</span>
+
+<span class="hljs-keyword">const</span> materials = [
+  <span class="hljs-string">'Hydrogen'</span>,
+  <span class="hljs-string">'Helium'</span>,
+  <span class="hljs-string">'Lithium'</span>,
+  <span class="hljs-string">'Beryllium'</span>
+];
+
+<span class="hljs-built_in">console</span>.log(materials.map(<span class="hljs-function"><span class="hljs-params">material</span> =&gt;</span> material.length));
+<span class="hljs-comment">// Expected output: Array [8, 6, 7, 9]</span>
+</code></pre>
+<h2 id="es6-module-pattern">ES6 module pattern</h2>
+<h3 id="export">Export</h3>
+<p>The export statement is used when creating JavaScript modules to export functions, objects, or
+    primitive values from the module file into other files or programs. Other programs then use the import statement to import the module. </p>
+<pre><code class="lang-js">//You can <span class="hljs-keyword">export</span> functions, classes, <span class="hljs-keyword">and</span> variables individually.
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> name1, name2, …, nameN; 
+<span class="hljs-keyword">export</span> function functionName()<span class="hljs-meta">{...}</span>
+<span class="hljs-keyword">export</span> class <span class="hljs-type">ClassName</span> <span class="hljs-meta">{...}</span>
+
+//<span class="hljs-keyword">Or</span> you can <span class="hljs-keyword">export</span> functions, etc <span class="hljs-keyword">in</span> a list. 
+
+function sayHi(name) {
+  alert(`<span class="hljs-type">Hello</span>, ${name}!`);
+}
+
+function sayBye(name) {
+  alert(`<span class="hljs-type">Bye</span>, ${name}!`);
+}
+
+<span class="hljs-keyword">export</span> {sayHi, sayBye}; // a list <span class="hljs-keyword">of</span> exported variables
+</code></pre>
+
+<h3 id="import">Import</h3>
+<p>The import statement is used to import read-only functions exported by another module.</p>
+<pre><code class="lang-js"><span class="hljs-comment">//You can import functions individually.</span>
+    
+<span class="hljs-keyword">import</span> {sayHi, sayBye} <span class="hljs-keyword">from</span> <span class="hljs-string">'./say.js'</span>;
+
+sayHi(<span class="hljs-string">'Dave'</span>); <span class="hljs-comment">// Hello, Dave!</span>
+sayBye(<span class="hljs-string">'John'</span>); <span class="hljs-comment">// Bye, Dave!</span>
+
+<span class="hljs-comment">//or, if you use a lot of functions in the module file, you can import all of them using *. </span>
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> say <span class="hljs-keyword">from</span> <span class="hljs-string">'./say.js'</span>;
+
+say.sayHi(<span class="hljs-string">'Dave'</span>);
+say.sayBye(<span class="hljs-string">'Dave'</span>);
+
+<span class="hljs-comment">//If you only use a few functions from a module file, don't use the * command </span>
+You<span class="hljs-string">'ll get the answer when you get to webpacking.</span>
+</code></pre>
+
+<a href="https://developer.mozilla.org/en-US/">SOURCE: MDN</a>

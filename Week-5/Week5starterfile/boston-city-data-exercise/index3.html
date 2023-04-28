@@ -1,0 +1,27 @@
+<div id="container">
+  <!-- populated by JS-->
+</div>
+
+<script src="./boston.js"></script>
+
+<script>
+  function renderBoston(boston, container) {
+    var person = boston.data;
+    var len = boston.data.length; // boston is an array
+
+    var html = '';
+   // for (let i = 0; i < 5; i++) {
+ 
+     //   html += '<li class="boston">' +
+       // '<h2>' + person[i][8] + '</h2>' +
+        //'<h3>' + person[i][11] + '</h3>' + '<h4>' + person[i][9] + '</h4>'
+    //}
+    
+    var topSalaryPeople = person.sort((a, b) => {
+      return b[11] - a[11]});
+    //var topSalaryPeople = person.filter((value) => { return value[11] >= 200000.00 && value != undefined;})
+    console.log(topSalaryPeople); 
+    container.innerHTML = '<ul id = "boston">' + html + '</ul>';
+  }
+  renderBoston(boston, document.getElementById('container'));
+</script>
