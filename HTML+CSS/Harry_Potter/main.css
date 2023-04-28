@@ -1,0 +1,31 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+body{
+    width: 962px;
+    background-color: white;
+    margin: 15px auto;
+    border: 2px solid black;
+}
+h2{
+    padding: 1em;
+}
+header{
+    border-bottom: 2px solid #ef9c00;
+    }
+main{
+    height: 350px;
+    width: 600px;
+    float: left;
+    border-right: 2px solid #ef9c00;
+    }
+aside{
+    width: 360px;
+    float: right;
+    }
+footer{
+    clear: both;
+    border-top: 2px solid #ef9c00;
+    }
