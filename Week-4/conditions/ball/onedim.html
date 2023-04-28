@@ -1,0 +1,18 @@
+<div id="ball" style="
+z-index: 5;
+position: absolute;
+left: 0px;
+top: 200px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: black;
+"></div>
+
+<script>
+    var velocity = 580;
+    var position = 15;
+    var ball = document.getElementById('ball');
+    position = position + velocity;
+    ball.style.left = position + 'px';
+</script>
