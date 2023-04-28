@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Callbacks</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+        <h1 class="header-text">Callback Functions</h1>
+    </div>
+<p>Please review the concepts coverd this week.</p>
+
+<h2 id="callbacks">Callback functions</h2>
+<p>A callback function is a function passed into another function as an argument, which is then invoked inside the outer
+    function to complete a routine or action.
+    Here is a quick example:</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span><span class="hljs-params">(name)</span> </span>{ 
+  alert(<span class="hljs-string">'Hello '</span> + name); 
+} 
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processUserInput</span><span class="hljs-params">(callback)</span> </span>{ 
+  <span class="hljs-keyword">var</span> name = prompt(<span class="hljs-string">'Please enter your name.'</span>); 
+  callback(name); 
+}
+
+
+processUserInput(greeting);
+</code></pre>
+<p>All the methods below take a callback function as one of their arguments. Often, the callback function specifies the parameters your want to use 
+    in the outer function. </p>
+<h3 id="array-foreach-">array.forEach()</h3>
+<p>The forEach() method executes a given function once for each array element.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>];
+
+array1.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(element));
+
+<span class="hljs-comment">// expected output: "a"</span>
+<span class="hljs-comment">// expected output: "b"</span>
+<span class="hljs-comment">// expected output: "c"</span>
+</code></pre>
+
+<h3 id="array-filter-">array.filter()</h3>
+<p>The filter() method creates a new array with all the elements that pass the test implemented by the given function.
+</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> words = [<span class="hljs-string">'spray'</span>, <span class="hljs-string">'limit'</span>, <span class="hljs-string">'elite'</span>, <span class="hljs-string">'exuberant'</span>, <span class="hljs-string">'destruction'</span>, <span class="hljs-string">'present'</span>]<span class="hljs-comment">;</span>
+
+<span class="hljs-keyword">const</span> result = words.filter(word =&gt; word.length &gt; <span class="hljs-number">6</span>)<span class="hljs-comment">;</span>
+
+console.<span class="hljs-built_in">log</span>(result)<span class="hljs-comment">;</span>
+// expected output: Array [<span class="hljs-string">"exuberant"</span>, <span class="hljs-string">"destruction"</span>, <span class="hljs-string">"present"</span>]
+</code></pre>
+<h3 id="array-sort-">array.sort()</h3>
+<p>The sort() method sorts the elements of an array in place and returns the sorted array. The default sort of the order is
+    ascending.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> months = [<span class="hljs-string">'March'</span>, <span class="hljs-string">'Jan'</span>, <span class="hljs-string">'Feb'</span>, <span class="hljs-string">'Dec'</span>]<span class="hljs-comment">;</span>
+months.sort()<span class="hljs-comment">;</span>
+console.<span class="hljs-built_in">log</span>(months)<span class="hljs-comment">;</span>
+// expected output: Array [<span class="hljs-string">"Dec"</span>, <span class="hljs-string">"Feb"</span>, <span class="hljs-string">"Jan"</span>, <span class="hljs-string">"March"</span>]
+
+<span class="hljs-keyword">const</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">30</span>, <span class="hljs-number">4</span>, <span class="hljs-number">21</span>, <span class="hljs-number">100000</span>]<span class="hljs-comment">;</span>
+array1.sort()<span class="hljs-comment">;</span>
+console.<span class="hljs-built_in">log</span>(array1)<span class="hljs-comment">;</span>
+// expected output: Array [<span class="hljs-number">1</span>, <span class="hljs-number">100000</span>, <span class="hljs-number">21</span>, <span class="hljs-number">30</span>, <span class="hljs-number">4</span>]
+</code></pre>
+<h3 id="array-map-">array.map()</h3>
+<p>The map() method creates a new array, populated with the results of calling a given function on every element in
+    the original array.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>];
+
+<span class="hljs-comment">//Pass a function to map, in this case, a function that multiplies each element in the original array by 2.</span>
+<span class="hljs-keyword">const</span> map1 = array1.map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x * <span class="hljs-number">2</span>);
+
+<span class="hljs-built_in">console</span>.log(map1);
+<span class="hljs-comment">//Now a new array is returned and the expected output of each element is multiplied by 2: Array [2, 8, 18, 32]</span>
+</code></pre>
+<h3 id="array-reduce-">array.reduce()</h3>
+<p>The reduce() method executes a reducer function (that you write) on each element of the array, resulting in single
+    output value. In this case, the reducer function adds the current number in the array to the totaled
+        numbers thus far.</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+
+<span class="hljs-keyword">const</span> reducer = <span class="hljs-function">(<span class="hljs-params">accumulator, currentValue</span>) =&gt;</span> accumulator + currentValue;
+
+<span class="hljs-comment">// 1 + 2 + 3 + 4</span>
+<span class="hljs-built_in">console</span>.log(array1.reduce(reducer));
+<span class="hljs-comment">// expected output: 10</span>
+
+<span class="hljs-comment">// 5 + 1 + 2 + 3 + 4</span>
+<span class="hljs-built_in">console</span>.log(array1.reduce(reducer, <span class="hljs-number">5</span>));
+<span class="hljs-comment">// expected output: 15</span>
+</code></pre>
+
+<p>-<a href="https://developer.mozilla.org/en-US/">Source: MDN</a></p>
+
+</body>
+</html>
