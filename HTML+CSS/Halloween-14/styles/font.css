@@ -1,0 +1,8 @@
+
+@font-face {
+    font-family: Murach;
+    src: url("Creepster-Regular.TTF");
+}
+h1 {
+    font-family: Murach, sans-serif; 
+}

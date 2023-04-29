@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale-1">
+	<title>The Halloween Store</title>
+	<link rel="icon" href="./images/favicon.ico">
+	<link rel="stylesheet" href="./styles/product.css">
+	<link rel="stylesheet" href="./styles/form.css">
+	</head>
+
+</style>
+<body>
+	<header>
+		<img src="./images/pumpkin.gif" alt="image">
+		<h1>The Halloween Store</h1>
+		<h2>For the little Goblin in all of us!</h2>
+		<nav id="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="product.html">Product list</a></li>
+				<li><a href="./personal/personal.html">Personal</a></li>
+				<li><a href="#" class="current">Decorating Ideas</a>
+					<ul>
+						<li><a href="#">Outdoor</a></li>
+						<li><a href="#">Indoor</a></li>
+						<li><a href="#">Table</a></li>
+						<li><a href="#">Treats</a></li>
+					</ul>	
+				</li>
+				<li><a href="email.html">Join email</a></li>
+			</ul>
+	
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Pleae enter the following information:</h2>
+			<form name="myform" action="Subscribe.html" method="post">
+				<label for="firstname">First name:</label>
+				<input type="text" name="firstname" id="firstname" autofocus required><br>
+				<label for="lastname">Last name:</label>
+				<input type="text" name="lastname" id="lastname" required><br>
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" required><br>
+				<label for="zip">Zip code:</label>
+				<input type="text" name="zip" id="zip" placeholder="Optional but appreciated: 99999" aria-invalid="true"><br>
+				<input type="submit" name="Subscribe" id="button" value="Subscribe">
+			</form>
+					</section>
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="#">Props</a></li>
+					<li><a href="#">Costumes</a></li>
+					<li><a href="#">Special Effects</a></li>
+					<li><a href="#">Masks</a></li>
+				</ul>
+			</nav>	
+		</aside>
+	</main>
+	<footer>
+		<p>&copy; 2016 Ben Murach</p>
+	</footer>	
+</body>
+</html>
