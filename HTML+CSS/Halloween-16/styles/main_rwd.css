@@ -1,0 +1,103 @@
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: white;
+    width: 960px;
+    border: 2px solid black;
+    margin: 20px;
+    max-width: 96%;
+}
+
+header{
+    border-bottom: 2px solid black;
+    background-image: linear-gradient(to right, rgb(192, 145, 58) , rgb(61, 65, 10));
+}
+header img{
+    float: left;
+    min-width: 40px;
+}
+header h1{
+    font-size: 250%;
+}
+header h1, h2
+{text-align: left;}
+#menu ul{
+    list-style-type: none;
+    position: relative;
+}
+#menu ul ul{
+    display: none;
+    position: absolute;
+}
+#menu ul ul li{
+    float: none;
+}
+
+#menu ul li:hover > ul{
+    display: block;
+    }
+#menu ul li{
+    float: left;
+}
+#menu ul li{
+    background-color: black;
+    width: 180px;
+    border: 2px solid black;
+}
+#menu ul ul a:hover{
+    background-color: gray;
+}
+#menu ul li a{
+    color: white;
+    text-align: center;
+    display: block;
+    padding: 20px 10px 15px 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+span{
+    font-size: 250%;
+}
+section{
+    width: 80%;
+    max-width: 100%;
+    float: right;
+    height: 60%;
+}
+aside nav ul li{
+    margin: 10px 20px;
+    padding: 10px 100px;
+}
+aside{
+    width: 16.5%;
+}
+figure{
+    text-align: left;
+    min-width: 40px;
+}
+aside nav ul li a{
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+aside nav ul li{
+    display: block;
+    padding: 20px 10px 15px 10px;
+
+   
+    background-color: orange;
+    width: 80%;
+    border: 2px solid black;
+}
+figcaption a{
+    font-weight: bold;
+    color: orange;
+}
+footer{
+    clear: both;
+    border-top: 2px solid black;
+    background-image: linear-gradient(rgb(214, 154, 41), rgb(54, 39, 39));
+}
+footer p{
+    text-align: center;
+}
