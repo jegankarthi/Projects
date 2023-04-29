@@ -1,0 +1,20 @@
+section form { 
+    margin: 10px auto; 
+    width: 	500px; }
+label {
+    float: left;
+    width: 10em;
+    text-align: right;}
+input {
+    width: 200px;
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+#button {
+    width: 100px;
+    background-color: orange;
+    margin-left: 13em; 
+    margin-top: 1em;
+    text-align: center;
+    border: 2px solid black;
+}
