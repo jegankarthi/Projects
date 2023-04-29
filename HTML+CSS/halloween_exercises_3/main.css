@@ -1,0 +1,28 @@
+html{
+    background-image: url("bats.gif");
+    background-size: 800px;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: white;
+    border: 20px black;
+    margin: 20px;
+    padding-left: 0em;
+    box-shadow: 1px 2px 20px 10px black;
+}
+img{float: left;}
+header{
+    border-bottom: 4px solid black;
+    background-image: linear-gradient(white, orange);}
+footer{
+    text-align: center;
+    background-image: linear-gradient(orange, black);
+    border-top: 4px solid black;
+    margin: 1px;
+}
+span{font-size: 200%;}
+h1{font-size: 200%;}
+header h1, h2{text-align: left;}
+header h1.indent{text-indent: 1em;} 
+header h2.indent{text-indent: 1em;} 
+a{color: orange;}
