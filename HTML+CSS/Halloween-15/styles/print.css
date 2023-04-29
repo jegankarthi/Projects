@@ -1,0 +1,25 @@
+body{
+    font-family: serif;
+    background-color: white;
+    color: black;
+    width: 960px;
+    font-size: 20px;
+}
+header{
+    display: none;
+}
+body aside{
+    display: none;
+}
+video{
+    display: none;
+}
+body section h2{
+    display: none;
+}
+footer{
+    display: none;
+}
+body section h3{
+    border-bottom: 3px solid black;
+}
