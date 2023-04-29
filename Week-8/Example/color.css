@@ -1,0 +1,38 @@
+body{
+    background-color: navajowhite;
+    border: 3px solid brown;
+    margin: 25px;
+    padding: 5px;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+h1{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    border: 2px solid gray;
+}
+main{
+    background-color: black;
+    border: 5px solid black;
+}
+div{
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid maroon;
+}
+div.men{
+    background-color: brown;
+}
+div.women{
+    background-color:coral;
+}
+div.child-men{
+    background-color:cornflowerblue;
+}
+div.child-women{
+    background-color:palevioletred;
+}
